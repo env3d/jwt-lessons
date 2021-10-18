@@ -1,4 +1,4 @@
-= JWT Lessons =
+# JWT Lessons 
 All of these scripts are created as CGI to be deployed on the apache
 webserver 2.4.x on AWS Linux 2.
 
@@ -10,7 +10,7 @@ line to your vhost configuration:
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ```
 
-= Password Authentication =
+# Password Authentication 
 
 Let’s say you are creating a mobile app where you have an API backend for authorized users to call.
 You’ll need to properly protect your backend.
@@ -43,7 +43,7 @@ OR
 $curl https://env3d:abcde@https://${SERVER_CGI_URL}/01-basic-auth.sh
 ```
 
-== Token Authentication ==
+# Token Authentication
 While password authentication on the API is easy to understand and implement,
 it comes with several disadvantages:
 
@@ -57,7 +57,7 @@ and have a standard way for token authenticity to be verified.
 The website [https://jwt.io](https://jwt.io) has lots of information on JWT,
 as well as an interactive tool for creating and verifying you tokens.
 
-== HMAC-SHA256 Signatures ==
+## HMAC-SHA256 Signatures 
 The script [02-hmac-token.sh](02-hmac-token.sh) is an example of a service where given the correct userid/password,
 it returns a valid JWT.  
 
@@ -73,7 +73,7 @@ signature in the JWT.
 Please note that the secret phrase will need to be shared between the producer of the JWT and
 the consumer of the JWT.
 
-== RSA-SHA256 Signatures ==
+## RSA-SHA256 Signatures 
 Using HMAC-SHA256 is great if the producer and consumer of JWT is the same system and can share the
 same secret.  However, if we the producer and consumer of the JWT are from different organizations,
 then it is not practical to share the symmetric secret phrase.  Instead, we will make use of
