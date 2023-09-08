@@ -1,14 +1,17 @@
 # JWT Lessons 
 All of these scripts are created as CGI to be deployed on the apache
-webserver 2.4.x on AWS Linux 2.
+webserver 2.4.x on Ubuntu 22.04
 
-For these to work properly, you'll need to add the following
+For these to work properly on your own server, you'll need to add the following
 line to your vhost configuration:
 
 ```
 # Pass Authorization header to CGI scripts
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 ```
+
+If you are taking my class, you can also clone this repo on learn.operatoroverload server
+under your own public_html directory.
 
 # Password Authentication 
 
