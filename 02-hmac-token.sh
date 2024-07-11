@@ -26,9 +26,6 @@ then
 fi
 
 # The $CRED variable has content, run base64 decode and extract
-echo "status: 200"
-echo 
-
 USERID=$(echo "$CRED" | base64 -d | cut -f 1 -d ':')
 PASSWORD=$(echo "$CRED" | base64 -d | cut -f 2 -d ':')
 
@@ -58,5 +55,7 @@ SIGNATURE=$(echo -n "${B64_HEADER}.${B64_PAYLOAD}" \
     | openssl dgst -sha256 -hmac "here_is_my_secret" -binary \
     | base64 | tr '+' '-' | tr '/' '_' | tr -d '=')
 
+echo "status: 200"
+echo 
 echo "${B64_HEADER}.${B64_PAYLOAD}.${SIGNATURE}"
     

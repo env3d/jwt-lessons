@@ -23,14 +23,13 @@ then
 fi
 
 # The $CRED variable has content, run base64 decode and extract
-echo "status: 200"
-echo 
-
 USERID=$(echo "$CRED" | base64 -d | cut -f 1 -d ':')
 PASSWORD=$(echo "$CRED" | base64 -d | cut -f 2 -d ':')
 
 # Normally - we would perform userid/password looking now
 # In this simple example, we simply output a welcome message
 
+echo "status: 200"
+echo 
 echo "User ${USERID} welcome!"
     

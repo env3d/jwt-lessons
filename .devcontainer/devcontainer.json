@@ -1,0 +1,7 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+  "features": {
+  },
+  "onCreateCommand": "bash ./.devcontainer/init.sh",
+  "forwardPorts": [80]
+}
