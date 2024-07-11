@@ -1,0 +1,2 @@
+# Pass Authorization header to CGI scripts
+SetEnvIfNoCase Authorization "(.*)" HTTP_AUTHORIZATION=$1
